@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数组课后练习</title>
+</head>
+
+<body>
+    <script>
+        var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+        console.log("原数组: " + arr);
+
+        var newArr = arr.filter(function (item) {
+            return item % 2 != 0;
+        });
+        console.log(newArr);
+
+        var arr2 = [4, 6, 1, 2, 3, 7, 5];
+        var max = arr2[0];
+        var index = 0;
+
+        for(var i = 1;i < arr2.length;i++) {
+            if(max < arr2[i]) {
+                max = arr2[i];
+            }
+        }
+
+        console.log("arr2的最大值是: " + max)
+
+         console.log(Math.floor(Math.random() * 5 ));
+
+    </script>
+</body>
+
+</html>

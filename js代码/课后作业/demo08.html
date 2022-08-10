@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>正则表达式</title>
+</head>
+
+<body>
+    <script>
+        // 用户输入
+        var str = "192660876@qq.com";
+
+        //校验表达式
+        //验证qq邮箱 192660876@qq.com
+        var reg = /^\w+@qq\.com/;
+
+        var b = reg.test(str);
+        var b2 = reg.exec(str);
+        console.log(b);
+        console.log(b2);
+
+        //手机号校验
+        var str2 = "17889786751";
+        var reg2 = /^\d{11}$/;
+
+        console.log(reg2.test(str2));
+
+        var str3 = "11231312dadsa999";
+        var reg3 = /[a-zA-Z]/g;
+        var str4 = str3.replace(reg3, "9");
+        console.log(str4);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom基础</title>
+    <style>
+        img {
+            width: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="../images/1.png" alt="">
+    <button class="btu">1</button>
+    <button class="btu">2</button>
+    <button class="btu">3</button>
+
+    <script>
+        let btus = document.querySelectorAll(".btu");
+        let img = document.querySelector("img");
+        let imgList = ["../images/1.png","../images/2.png","../images/3.png"];
+        console.log(btus);
+
+        // for(let i = 0,j=1;i < btus.length;i++,j++) {
+        //     btus[i].onclick = () => img.src = "../images/"+ j +".png";
+        // }
+
+        for(let i in btus) {
+            console.log(i);
+            btus[i].onclick = () => img.src = imgList[i];
+        }
+        // btus[0].onclick = () => img.src = "../images/1.png";
+        // btus[1].onclick = () => img.src = "../images/2.png";
+        // btus[2].onclick = () => img.src = "../images/3.png";
+    </script>
+</body>
+
+</html>

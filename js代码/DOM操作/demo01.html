@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom操作</title>
+</head>
+<body>
+    <button>按钮</button>
+    <ul></ul>
+
+    <script>
+        let but = document.querySelector('button');
+        let ul = document.querySelector('ul');
+        but.onclick = function() {
+            ul.innerHTML = `
+                <li>香蕉</li>
+                <li>苹果</li>
+                <li>鸭梨</li>
+            `
+        };
+
+        //创建元素节点 createElement
+        //创建文本节点 createTextNode
+        //添加节点 appendChild
+        //删除节点 removeChild
+
+    </script>
+</body>
+</html>

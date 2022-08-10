@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>函数进阶</title>
+</head>
+<body>
+    <script>
+        // (function() {
+        //     console.log("Hello,World");
+        // })()
+
+        //闭包
+        // function fun1() {
+        //     function fun2() {
+        //         console.log("I am fun2");
+        //     }
+        //     return fun2;
+        // }
+
+        // const f = fun1();
+        // f();
+
+        //箭头函数
+        // let f1 = x => x * 2;
+        // console.log(f1(5));
+
+        // 箭头函数与普通函数的区别
+        //普通函数：创建要使用关键字 function，返回返回值要使用return。
+        //箭头函数：可以省略function,如果返回值是表达式,可以省略return,如果参数列表只有一个参数,可以省略括号
+        //this指向不同，普通函数指向调用该函数的对象，箭头指向的是在哪定义的就指向谁
+
+        let cat = {
+            name:"miaomiao",
+            getName:function() {
+                setInterval(() => {
+                    console.log(this.name);
+                }, 1000);
+            }
+        }
+
+        cat.getName();
+
+
+    </script>
+</body>
+</html>

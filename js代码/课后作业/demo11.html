@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>面向对象</title>
+</head>
+<body>
+    <script>
+        // function Dog(name,age) {
+        //     this.name = name;
+        //     this.age = age;
+        // }
+
+        // let dog = new Dog("小黄",3);
+        // console.log(dog.name);
+
+        //通过原型对象，为构造函数创建的对象赋予新的方法
+        // Dog.prototype.sayName = function(name) {
+        //     console.log(`我的名字是${this.name}`);
+        // }
+
+        // dog.sayName();
+
+        //通过class创建类
+        class Dog{
+            constructor(name,age) {
+                this.name = name;
+                this.age = age;
+            }
+        }
+
+        let dog = new Dog("xh",18);
+        console.log(dog.name);
+
+        // 拓展Date对象实现如下功能:实现dateFomate方法，返回值是 "xxxx年xx月xx日"。
+        Date.prototype.dateFormate = function() {
+             return `${this.getFullYear()}年${this.getMonth()+1}月${this.getDate()}日`;
+        }
+
+        let date = new Date();
+        console.log(date.dateFormate());
+
+        // 定义一个Person类，让Student类和Teacher类继承Person,
+        //为Person类添加getlnfotmation方法，是student类和Teacher类都可以通过此方法获取个人信息
+        
+        //一个类只能有一个构造器,子类创建对象先调用父类的构造器创建对象
+        class Person{
+            constructor(name,age) {
+                this.name = name;
+                this.age = age;
+            }
+            getLnformation() {
+                console.log(`姓名:${this.name} 年龄:${this.age}`)
+            }
+
+        }
+
+        class Student extends Person{
+        }
+
+        class Teacher extends Person{
+        }
+
+        let stu = new Student("xh",13);
+        stu.getLnformation();
+
+        let tea = new Teacher("lh",23);
+        tea.getLnformation();
+
+
+    </script>
+</body>
+</html>

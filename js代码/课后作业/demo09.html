@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Es6</title>
+</head>
+
+<body>
+    <script>
+        {
+            let str = "Hello";
+        }
+
+        const PI = 3.14;
+
+        let str = `我是
+        超人`;
+        console.log(str);
+
+        let year = "2022";
+        let yue = "8";
+        let ri = "9";
+
+        let result = `${year}年${yue}月${ri}日`;
+        console.log(result);
+
+        // let [n,m] = [10,20];
+        let n = 10;
+        let m = 20;
+
+        [n,m] = [m,n];
+
+        console.log(n);
+        console.log(m);
+
+        //对象解构赋值
+        let {age,name} = {name:"xm",age:18};
+        console.log(age);
+        console.log(name);
+
+        let xh = {name:"xh",age:17};
+        function getName({name}) {
+            return name;
+        };
+
+        console.log(getName(xh));
+
+        //1.声明变量的关键字 let const(常量)
+        //2.就是字符串模板 `${}` 
+        //3.解构赋值 数组 对象 方法参数
+
+    </script>
+</body>
+
+</html>

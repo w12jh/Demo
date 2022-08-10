@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom基础</title>
+    <style>
+        .box{
+            height: 100px;
+            width: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="he">Hello,World.</h1>
+    <h1 id="he2"></h1>
+    <button class="but">1</button>
+    <button class="but">2</button>
+    <button class="but">3</button>
+    <div class="box"></div>
+
+    <script>
+        // document.getElementsByClassName("but") 
+        // 根据class类名返回一个元素数组
+        // console.log(document.getElementsByClassName("but")); 
+        // let btns = document.getElementsByClassName("but");
+
+        
+        let h1two = document.getElementById("he2");
+        setInterval(()=>{
+            let date = new Date();
+            h1two.innerHTML = `现在时间是: ${date.getFullYear()}年${date.getMonth()+1}月${date.getDate()}日${date.getHours()}时${date.getMinutes()}分${date.getSeconds()}秒`;
+        },1000)
+        
+        // innerHTML可以获取和设置元素内的所有内容
+        // let h1 = document.getElementById("he");
+        // h1.innerHTML = "你好,世界.";
+
+        // for(let i = 0,j=10;i < btns.length;i++,j++) {
+        //     btns[i].innerHTML = j;
+        // }
+
+        // let arr = [1,1111,133];
+
+        // for(let i of arr) {
+        //     console.log(i);
+        // }
+
+        // for(let i in arr) {
+        //     console.log(i);
+        // }
+
+        // document.querySelector() 根据选择器获取单个元素节点
+        // document.querySelectorAll() 根据选择器获取多个元素节点
+
+        let h1 = document.querySelector("#he");
+        h1.innerHTML = "你好,世界.";
+
+        // 给第一个按钮添加一个点击事件,点击之后将内容修改成 Hello,World.
+        // onclick 鼠标点击触发事件
+        // onmouseenter 鼠标移入元素触发
+        // onmouseleave 鼠标移出元素触发
+        let buts = document.querySelectorAll(".but");
+        let but1 = buts[0];
+        but1.onclick = () => h1.innerHTML = "Hello,World";
+        let box = document.querySelector(".box");
+        box.onmouseenter = () => console.log("Hello Red");
+        box.onmouseleave = () => console.log("Hello Box");
+
+    </script>
+</body>
+</html>
